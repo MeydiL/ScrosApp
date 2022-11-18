@@ -54,7 +54,7 @@ public class Login extends AppCompatActivity {
                                     Toast.makeText(Login.this, "Ha iniciado sesión exitosamente.", Toast.LENGTH_SHORT).show();
 
                                     //Abrimos la pantalla de menu principal
-                                    startActivity(new Intent(Login.this, MainActivity.class));
+                                    startActivity(new Intent(Login.this, Menu.class));
                                     finish();
                                 }else{
                                     Toast.makeText(Login.this, "Error, contraseña incorrecta.", Toast.LENGTH_SHORT).show();
