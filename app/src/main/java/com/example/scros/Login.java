@@ -20,13 +20,14 @@ import com.google.firebase.database.ValueEventListener;
 public class Login extends AppCompatActivity {
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://scros-bce88-default-rtdb.firebaseio.com/");
 
+    String usuario, contraseña;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText usuario = findViewById(R.id.usuario);
-        final EditText contraseña = findViewById(R.id.contrasena);
+        final EditText usuarioEt = findViewById(R.id.usuario);
+        final EditText contraseñaEt = findViewById(R.id.contrasena);
         final Button btnlogin= findViewById(R.id.btnlogin);
         final TextView registrarAhora =findViewById(R.id.txtRegistro);
 
@@ -35,23 +36,22 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
 
                 //inter.nombreUsuario = usuario.getText().toString();
-                final String txtUsuario = usuario.getText().toString();
-                final String txtContraseña = contraseña.getText().toString();
+                usuario = usuarioEt.getText().toString();
+                contraseña = contraseñaEt.getText().toString();
 
-                if (txtUsuario.isEmpty() || txtContraseña.isEmpty()){
+                if (usuario.isEmpty() || contraseña.isEmpty()){
                     Toast.makeText(Login.this, "Por favor, ingrese su usuario o contraseña.", Toast.LENGTH_SHORT).show();
                 }else{
-
                     databaseReference.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             //Verificar si el usuario existe en la base de datos
-                            if (snapshot.hasChild(txtUsuario)){
+                            if (snapshot.exists()){
                                 //El usuario existe por lo tanto, obtenemos la contraseña de la DB.
 
-                                final String getContraseña = snapshot.child(txtUsuario).child("contraseña").getValue(String.class);
+                                final String getContraseña = snapshot.child(usuario).child("contraseña").getValue(String.class);
 
-                                if(getContraseña.equals(txtContraseña)){
+                                if(getContraseña.equals(contraseña)){
                                     Toast.makeText(Login.this, "Ha iniciado sesión exitosamente.", Toast.LENGTH_SHORT).show();
 
                                     //Abrimos la pantalla de menu principal

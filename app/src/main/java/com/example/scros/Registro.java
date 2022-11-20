@@ -172,13 +172,14 @@ public class Registro extends AppCompatActivity {
         String uid = firebaseAuth.getUid();
 
         HashMap<String, String> Datos = new HashMap<>();
-        Datos.put("uid", uid);
-        Datos.put("usuario", usuario);
-        Datos.put("correo", correo);
-        Datos.put("nombre", nombre);
-        Datos.put("apellidoPat", apellidoPat);
-        Datos.put("apellidoMat", apellidoMat);
+
         Datos.put("contraseña", contraseña);
+        Datos.put("apellidoMat", apellidoMat);
+        Datos.put("apellidoPat", apellidoPat);
+        Datos.put("nombre", nombre);
+        Datos.put("correo", correo);
+        Datos.put("usuario", usuario);
+        Datos.put("uid", uid);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Usuarios");
         databaseReference.child(uid)
