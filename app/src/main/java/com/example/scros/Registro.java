@@ -85,6 +85,7 @@ public class Registro extends AppCompatActivity {
                 else{
                     CrearCuenta();
 
+
                    /* databaseReference.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
