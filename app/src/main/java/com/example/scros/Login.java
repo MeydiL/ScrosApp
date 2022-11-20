@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             //Verificar si el usuario existe en la base de datos
-                            if (snapshot.exists()){
+                            if (snapshot.exists() ){
                                 //El usuario existe por lo tanto, obtenemos la contraseña de la DB.
 
                                 final String getContraseña = snapshot.child(usuario).child("contraseña").getValue(String.class);
