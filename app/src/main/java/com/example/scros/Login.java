@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //inter.nombreUsuario = usuario.getText().toString();
                 final String txtUsuario = usuario.getText().toString();
                 final String txtContraseña = contraseña.getText().toString();
 
@@ -41,7 +42,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Por favor, ingrese su usuario o contraseña.", Toast.LENGTH_SHORT).show();
                 }else{
 
-                    databaseReference.child("usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
+                    databaseReference.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             //Verificar si el usuario existe en la base de datos
@@ -82,5 +83,7 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(Login.this, Registro.class));
             }
         });
+
+
     }
 }

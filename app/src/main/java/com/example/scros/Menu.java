@@ -1,8 +1,10 @@
 package com.example.scros;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.scros.ui.gallery.CrearProyecto;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -32,6 +34,7 @@ public class Menu extends AppCompatActivity {
         binding.appBarMenu.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(Menu.this, CrearProyecto.class));
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
