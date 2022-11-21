@@ -8,6 +8,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    //Menu lateral
     <string name="menu_actividades">Actividades</string>
     <string name="menu_amigos">Amigos</string>
     <string name="menu_misproyectos">Mis proyectos</string>
@@ -16,7 +17,7 @@
     <string name="menu_cerrarsesion">Cerrar sesión</string>
     <string name="scros">SCROS</string>
 
-
+    //Crear proyecto
     <string name="txt_hintNombre">Nombre:</string>
     <string name="txt_hintDescripcion">Descripción:</string>
     <string name="boton_Crear_proyecto">Crear proyecto</string>

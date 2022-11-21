@@ -98,7 +98,7 @@ public class Login extends AppCompatActivity {
                         //verificar si la tarea se completo exitosamente
                         if(task.isSuccessful()){
                             progressDialog.dismiss();
-                            FirebaseUser user =firebaseAuth.getCurrentUser();
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
 
                             //Abrimos la pantalla de menu principal
                             startActivity(new Intent(Login.this, Menu.class));
