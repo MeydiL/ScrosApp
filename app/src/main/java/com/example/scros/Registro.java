@@ -85,57 +85,6 @@ public class Registro extends AppCompatActivity {
                 else{
                     CrearCuenta();
 
-
-                   /* databaseReference.child("Usuarios").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                            //VERIFICAMOS SI EL USUARIO YA ESTA REGISTRADO EN LA BD
-                            if (snapshot.hasChild(usuario)){
-                                Toast.makeText(Registro.this, "Este usuario ya está registrado.", Toast.LENGTH_SHORT).show();
-
-                            }else{
-                                // Enviar los datos a la BD, el nombre usuario sera la identidad unica por lo que todos lo datos de
-                                // detalle del usuario debe  de comenzar con el usuario.
-                                databaseReference.child("Usuarios").child(usuario).child("nombre").setValue(nombre);
-                                databaseReference.child("Usuarios").child(usuario).child("apellidoPat").setValue(apellidoPat);
-                                databaseReference.child("Usuarios").child(usuario).child("apellidoMat").setValue(apellidoMat);
-                                databaseReference.child("Usuarios").child(usuario).child("contraseña").setValue(contraseña);
-
-                                Toast.makeText(Registro.this, "Usuario registrado correctamente.", Toast.LENGTH_SHORT).show();
-                                finish();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });*/
-
-                    /*databaseReference.child("amigos").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if (snapshot.hasChild(txtUsuario)){
-                                /*Random random = new Random();
-                                int clave = random.nextInt(10000);
-                                databaseReference.child("amigos").child(txtUsuario).child(txtUsuario+"_"+clave).setValue("null");
-
-                                finish();
-                            }else{
-                                Random random = new Random();
-                                int clave = random.nextInt(10000);
-                                databaseReference.child("amigos").child(txtUsuario).child(txtUsuario+"_"+clave).setValue("null");
-
-                                finish();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });*/
                 }
             }
         });
@@ -146,6 +95,7 @@ public class Registro extends AppCompatActivity {
                 finish();
             }
         });
+
     }
     public void CrearCuenta(){
         progressDialog.setMessage("Creando su cuenta.");

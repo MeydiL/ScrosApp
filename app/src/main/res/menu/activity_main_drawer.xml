@@ -5,32 +5,47 @@
 
     <group android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_actividades" />
-        <item
-            android:id="@+id/nav_actividades"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_amigos" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_misproyectos" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_soycolaborador" />
+        <item android:title="Principal">
+            <menu>
+                <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/menu_actividad"
+                    android:title="@string/menu_actividades" />
+                <item
+                    android:id="@+id/nav_actividades"
+                    android:icon="@drawable/menu_amigos"
+                    android:title="@string/menu_amigos" />
 
-        <item
-            android:id="@+id/nav_cuenta"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_cuenta" />
+            </menu>
+        </item>
 
-        <item
-            android:id="@+id/nav_cerrarsesion"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_cerrarsesion" />
+        <item android:title="Trabajos">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/menu_proyectos"
+                    android:title="@string/menu_misproyectos" />
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:icon="@drawable/menu_colab"
+                    android:title="@string/menu_soycolaborador" />
+            </menu>
+        </item>
+
+        <item android:title="Perfil">
+            <menu>
+                <item
+                    android:id="@+id/nav_cuenta"
+                    android:icon="@drawable/menu_cuenta"
+                    android:title="@string/menu_cuenta" />
+                <item
+                    android:id="@+id/nav_cerrarsesion"
+                    android:icon="@drawable/menu_salir"
+                    android:title="@string/menu_cerrarsesion" />
+            </menu>
+        </item>
 
     </group>
+
 </menu>
